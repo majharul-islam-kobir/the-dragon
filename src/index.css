@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./src/assets/fonts/custom-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
