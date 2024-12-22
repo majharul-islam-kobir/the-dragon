@@ -70,7 +70,7 @@ function LogIn() {
   };
 
   return (
-    <div className="mx-auto w-10/12 my-10">
+    <div className="mx-auto w-10/12 mt-20">
       <div className="card bg-base-100 max-w-md shrink-0 shadow-2xl mx-auto">
         <h1 className="text-center text-3xl font-semibold">LogIn Now</h1>
         <form onSubmit={handleSubmit} className="card-body">

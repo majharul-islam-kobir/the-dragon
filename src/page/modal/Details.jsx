@@ -40,10 +40,10 @@ const Details = () => {
   if (!newsItem) return <p>No data found</p>;
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mt-10">
       {/* Header */}
       <header className="text-center mb-6">
-        <h1 className="text-4xl font-bold">Dragon News</h1>
+        <h1 className="text-4xl sm:text-6xl  font-bold">Dragon News</h1>
       </header>
 
       {/* Main Content and Sidebar Grid */}

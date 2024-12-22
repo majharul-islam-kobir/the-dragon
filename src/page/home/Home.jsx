@@ -38,13 +38,13 @@ const Home = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="flex h-screen mt-10 container mx-auto">
-      <div className="w-1/5 bg-gray-100 p-4 h-screen overflow-y-scroll sticky top-0">
+    <div className="flex flex-col md:flex-row h-screen mt-30 container mx-auto">
+      <div className=" hidden md:block md:w-1/5 bg-gray-100 p-4 h-screen overflow-y-scroll sticky top-0 ">
         <Sideber />
       </div>
 
-      <div className="w-3/5 bg-white p-4 overflow-y-auto h-screen">
-        <h1 className="text-2xl font-bold mb-10">Dragon News Home</h1>
+      <div className="w-full md:w-3/5 bg-white p-4 overflow-y-auto h-screen">
+        <h1 className="text-2xl font-bold my-20">Dragon News Home</h1>
         {news.map((item) => (
           <div key={item._id} className="mb-4 border-b pb-4 relative">
             <Link to={`/details/${item._id}`} state={item}>
@@ -80,7 +80,7 @@ const Home = () => {
                 className="w-full h-auto mb-2 rounded"
               />
             </Link>
-            <p className="text-sm text-gray-600">
+            <p className="text-md text-gray-600">
               {expandedNewsId === item._id
                 ? item.details
                 : `${item.details.slice(0, 200)}...`}
@@ -115,7 +115,7 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="w-1/5 bg-gray-100 p-4 h-screen overflow-y-scroll sticky top-0">
+      <div className=" hidden md:block md:w-1/5 bg-gray-100 p-4 h-screen overflow-y-scroll sticky top-0">
         <Sideber2 />
       </div>
     </div>
