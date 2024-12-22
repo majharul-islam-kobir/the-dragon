@@ -2,47 +2,56 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'  // react-router-dom import পরিবর্তন
-import Home from './page/home/Home.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './page/about/About.jsx'
 import Career from './page/career/Career.jsx'
 import AuthProvider from './provider/AuthProvider.jsx'
 import LogIn from './page/signina-register/LogIn.jsx'
 import Register from './page/signina-register/Register.jsx'
+import { Provider } from 'react-redux'
+import store from './app/store.js'
+import Home from './page/home/Home.jsx'
+import Details from './page/modal/Details.jsx'
 
-const routes = createBrowserRouter([ // 'route' পরিবর্তন করে 'routes'
+const routes = createBrowserRouter([ 
   {
     path: "/",
-    element: <App />,
+    element: <App />, 
     children: [
       {
-        path: "/",  // Home page
-        element: <Home />
+        path: "/", 
+        element: <Home /> // Home Page
       },
       {
-        path: "/about",  // About page
-        element: <About />
+        path: "/about", 
+        element: <About /> // About Page
       },
       {
-        path: "/career",  // Career page
-        element: <Career />
+        path: "/career", 
+        element: <Career /> // Career Page
       },
       {
-        path: "/login",  // Login page
-        element: <LogIn />
+        path: "/login",  
+        element: <LogIn /> // Login Page
       },
       {
-        path: "/register",  // Register page
-        element: <Register />
+        path: "/register",  
+        element: <Register /> // Register Page
+      },
+      {
+        path: "/details/:id",  
+        element: <Details />
       },
     ]
   }
-])
+]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={routes} />  {/* 'route' পরিবর্তন করে 'routes' */}
-    </AuthProvider>
+    <Provider store={store}> {/* Redux Provider */}
+      <AuthProvider> {/* Authentication Provider */}
+        <RouterProvider router={routes} /> {/* Router */}
+      </AuthProvider>
+    </Provider>
   </StrictMode>
-)
+);
