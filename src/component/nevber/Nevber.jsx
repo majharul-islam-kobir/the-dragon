@@ -24,7 +24,7 @@ function Nevber() {
   }
 
   return (
-    <nav className="flex justify-between items-center mt-5 sticky top-[225px] container mx-auto z-20">
+    <nav className="flex justify-between items-center sticky top-[180px] bg-white py-7 container mx-auto z-20">
       {/* Hamburger Menu for Small Screens */}
       <div className="md:hidden">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-2xl">

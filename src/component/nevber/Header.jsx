@@ -15,7 +15,7 @@ function Header() {
   }, []);
 
   return (
-    <div className="text-center sticky top-0 container mx-auto z-20">
+    <div className="text-center sticky top-0 container mx-auto z-20 bg-white">
       {/* Header Title */}
       <h1 className="font-custom text-4xl md:text-6xl text-black">
         The Dragon News
